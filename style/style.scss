@@ -6,11 +6,24 @@ $akcent-color: #009688;
 
 $font-size: 24px;
 
-// font-family: 'Aboreto', cursive;
-// font-family: 'Cinzel', serif;
-// font-family: 'El Messiri', sans-serif;
-// font-family: 'Orbitron', sans-serif;
-// font-family: 'Raleway', sans-serif;
+
+
+@mixin theme-colors($light-theme) {
+  @if $light-theme {
+    $main-text-color: #282d3d;
+$second-text-color: #393a3c;
+$main-color: #f1f1f1;
+$second-color: white;
+$akcent-color: #960000;
+  } @else {
+    $main-text-color: #282d3d;
+$second-text-color: #393a3c;
+$main-color: #f1f1f1;
+$second-color: white;
+$akcent-color: #009688;
+  }
+}
+
 
 @mixin DispalyFlex($flex-derection, $flex-start) {
   display: flex;
@@ -28,6 +41,8 @@ $font-size: 24px;
 body {
   background-color: $main-color;
   font-size: $font-size;
+
+
 
   h2 {
     font-family: "El Messiri", sans-serif;
